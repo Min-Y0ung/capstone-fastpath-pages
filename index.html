@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>로컬 LLM Fast Path</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600;700&display=swap">
+<style>
+:root { --bg:#f3f5f1; --panel:#fff; --ink:#1d2a22; --muted:#5d6b62; --line:#d9e0d8; --accent:#2f6b4a; }
+@media (prefers-color-scheme: dark) { :root { --bg:#121815; --panel:#1a221d; --ink:#e3ebe5; --muted:#93a399; --line:#2c3830; --accent:#7cc49a; color-scheme: dark } }
+* { box-sizing: border-box }
+body { margin:0; background:var(--bg); color:var(--ink); font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif; line-height:1.6;
+  padding-block: 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+main { max-width: 720px; margin: 0 auto; display: grid; gap: 20px }
+h1 { margin: 0; font-size: 1.7rem; text-wrap: balance }
+p { margin: 0; color: var(--muted) }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px }
+a.card { display: grid; gap: 4px; padding: 18px 20px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; color: inherit; text-decoration: none }
+a.card:hover, a.card:focus-visible { border-color: var(--accent); outline: none }
+a.card b { font-size: 1.05rem; color: var(--accent) }
+a.card span { font-size: .9rem; color: var(--muted) }
+small { color: var(--muted) }
+</style>
+</head>
+<body>
+<main>
+  <h1>로컬 LLM 기반 Fast Path</h1>
+  <p>농작업자 웨어러블 센서 5초 구간을 로컬 GPU에서 실행하는 파인튜닝 LLM(Qwen3.5 4B, 규모 비교로 Ministral 3 8B)이 읽고 사고 여부·유형·긴급도·권고 조치를 1초 안에 판정하는 모듈입니다. 캡스톤디자인2 결과물.</p>
+  <div class="cards">
+    <a class="card" href="pipeline.html"><b>파이프라인과 결과</b><span>센서 → 토큰 → LLM 판정 → 알림 6단계, 데이터 구성, 판정기 비교, 목표 대비 결과</span></a>
+    <a class="card" href="demo.html"><b>판정 시연</b><span>시나리오별 센서 파형과 로컬 모델의 실제 판정을 재생하고 임계값 규칙과 비교</span></a>
+  </div>
+  <small>시연의 판정은 평가 중 기록된 실제 LLM 응답을 재생한 것이며, 페이지는 모델을 호출하지 않습니다.</small>
+</main>
+</body>
+</html>
